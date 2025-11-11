@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exam Information</title>
+<style>
+body{
+font-family:Arial;
+background:#e8e8e8;
+margin:10px;
+}
+
+h1{
+color:blue;
+text-align:center;
+}
+
+div{
+background:white;
+padding:10px;
+margin:15px;
+border:2px solid black;
+}
+
+.exam-item{
+padding:8px;
+margin:3px;
+background:lightblue;
+cursor:pointer;
+}
+
+.exam-item:hover{
+background:lightgreen;
+}
+
+#details{
+display:none;
+}
+
+h2{
+color:darkblue;
+}
+</style>
+</head>
+<body>
+
+<h1>Indian Exam Information</h1>
+
+<div>
+<h2>Select an Exam:</h2>
+<div class="exam-item" onclick="showExam('upsc')">UPSC Civil Services</div>
+<div class="exam-item" onclick="showExam('ssc')">SSC CGL</div>
+<div class="exam-item" onclick="showExam('railway')">Railway NTPC</div>
+<div class="exam-item" onclick="showExam('banking')">Banking PO</div>
+<div class="exam-item" onclick="showExam('jee')">JEE Main</div>
+<div class="exam-item" onclick="showExam('neet')">NEET</div>
+<div class="exam-item" onclick="showExam('cat')">CAT</div>
+<div class="exam-item" onclick="showExam('gate')">GATE</div>
+</div>
+
+<div id="details">
+<h2 id="examName"></h2>
+<div id="qualification"></div>
+<div id="salary"></div>
+<div id="age"></div>
+<div id="other"></div>
+</div>
+<div>
+    <p>Developed by Gayatri Bhandekar</p>
+</div>
+<script>
+var examData = {
+upsc: {
+name: "UPSC Civil Services",
+qualification: "Qualification: Graduation from any recognized university",
+salary: "Salary: Rs. 56,100 - Rs. 2,50,000 per month",
+age: "Age Limit: 21-32 years (relaxation for reserved categories)",
+other: "Other Info: One of the toughest exams in India. Includes IAS, IPS, IFS etc."
+},
+ssc: {
+name: "SSC CGL",
+qualification: "Qualification: Bachelor's degree from recognized university",
+salary: "Salary: Rs. 25,500 - Rs. 1,51,100 per month",
+age: "Age Limit: 18-32 years",
+other: "Other Info: Combined Graduate Level exam for various government posts"
+},
+railway: {
+name: "Railway NTPC",
+qualification: "Qualification: 12th pass or Graduation",
+salary: "Salary: Rs. 19,900 - Rs. 35,400 per month",
+age: "Age Limit: 18-30 years",
+other: "Other Info: National Thermal Power Corporation exam for railway jobs"
+},
+banking: {
+name: "Banking PO",
+qualification: "Qualification: Graduation in any discipline",
+salary: "Salary: Rs. 36,000 - Rs. 63,840 per month",
+age: "Age Limit: 20-30 years",
+other: "Other Info: Probationary Officer exam conducted by IBPS and SBI"
+},
+jee: {
+name: "JEE Main",
+qualification: "Qualification: 12th pass with Physics, Chemistry, Mathematics",
+salary: "Salary: Not applicable (Entrance exam for engineering colleges)",
+age: "Age Limit: No upper age limit, must have passed 12th",
+other: "Other Info: Joint Entrance Examination for admission to NITs, IIITs and other engineering colleges"
+},
+neet: {
+name: "NEET",
+qualification: "Qualification: 12th pass with Physics, Chemistry, Biology",
+salary: "Salary: Not applicable (Entrance exam for medical colleges)",
+age: "Age Limit: Minimum 17 years, maximum 25 years",
+other: "Other Info: National Eligibility cum Entrance Test for MBBS and BDS courses"
+},
+cat: {
+name: "CAT",
+qualification: "Qualification: Bachelor's degree with minimum 50% marks",
+salary: "Salary: Not applicable (Entrance exam for MBA)",
+age: "Age Limit: No age limit",
+other: "Other Info: Common Admission Test for admission to IIMs and other management institutes"
+},
+gate: {
+name: "GATE",
+qualification: "Qualification: Bachelor's degree in Engineering or Master's degree",
+salary: "Salary: Not applicable (Entrance exam for higher studies and PSU jobs)",
+age: "Age Limit: No age limit",
+other: "Other Info: Graduate Aptitude Test in Engineering for M.Tech admission and PSU recruitment"
+}
+};
+
+function showExam(examType){
+var exam = examData[examType];
+var detailsDiv = document.getElementById("details");
+
+document.getElementById("examName").innerHTML = exam.name;
+document.getElementById("qualification").innerHTML = exam.qualification;
+document.getElementById("salary").innerHTML = exam.salary;
+document.getElementById("age").innerHTML = exam.age;
+document.getElementById("other").innerHTML = exam.other;
+
+detailsDiv.style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
